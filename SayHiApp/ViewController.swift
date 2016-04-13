@@ -10,6 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var messageLabel: UILabel!
+    
+    
+    @IBOutlet var nameField: UITextField!
+    
+    
+    @IBAction func buttonPressed(sender: UIButton) {
+        
+//xcode 7 change///
+        let nameEntered = nameField.text
+        messageLabel.text = "Hi there \(nameEntered)"
+        nameField.text = ""
+        nameField.resignFirstResponder()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
